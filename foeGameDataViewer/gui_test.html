@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+    <style>
+        #dump {
+            padding: 3px 5px;
+            width: 100%;
+            min-height: 1em;
+            border: 2px solid gray;
+            border-radius: 10px;
+            box-shadow: 1px 1px 2px gray;
+            background-color: white;
+        }
+        #buildings, #clan {
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="buildings_toggle">Buildings: (click here to show/hide)</h1>
+    <table id="buildings"></table>
+    
+    <h1 id="clan_toggle">Clan:</h1>
+    <table id="clan"></table>
+    
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="interestingBuildingsProperties.js"></script>
+    <script src="interestingClanProperties.js"></script>
+    <script src="exampleStartupService.js"></script>
+    <script src="exampleClanService.js"></script>
+    <script src="FoeParser.js"></script>
+    
+    <script>
+        FoeParser.parseClan(exampleClanService, interestingClanProperties);
+        FoeParser.parseBuildings(exampleStartupService, interestingBuildingsProperties).hide();
+    </script>
+</body>
+</html>
