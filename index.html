@@ -6,12 +6,20 @@
     <style>
       html {
         background: white;
-        animation: background 3s;
+        animation: background_in 3s;
         padding: 5em 0;
       }
-      @keyframes background {
+      html.out {
+        background: #fea;
+        transition: background_out .3s;
+      }
+      @keyframes background_in {
           from { background: #fea; }
           to   {}
+      }
+      @keyframes background_out {
+          from {}
+          to   { background: #fea; }
       }
       body {
         max-width: 750px;
@@ -65,5 +73,12 @@
       <li>define MVP requirements</li>
       <li>implement</li>
       <li>add tests</li>
+    </ul>
+
+    <script>
+        window.onbeforeunload = function(e){
+          document.documentElement.className = 'out';
+        }
+    </script>
   </body>
 </html>
